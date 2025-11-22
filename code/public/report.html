@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Feedback Report - Sales Practice</title>
+		<link rel="stylesheet" href="report.css" />
+	</head>
+	<body>
+		<!-- Navigation -->
+		<nav class="nav-bar">
+			<div class="nav-container">
+				<a href="index.html" class="nav-link">Home</a>
+				<a href="report.html" class="nav-link active">Report</a>
+				<a href="history.html" class="nav-link">History</a>
+			</div>
+		</nav>
+
+		<div class="report-container">
+			<h1 class="report-title">Conversation Feedback Report</h1>
+
+			<!-- Summary Section -->
+			<section class="report-section collapsible">
+				<div class="section-header" onclick="toggleSection('summary')">
+					<h2>Conversation Summary</h2>
+					<span class="chevron" id="summary-chevron">▼</span>
+				</div>
+				<div class="section-content" id="summary-content">
+					<div id="summary-text">Loading AI Summary...</div>
+				</div>
+			</section>
+
+			<!-- Evaluation Section -->
+			<section class="report-section collapsible">
+				<div class="section-header" onclick="toggleSection('evaluation')">
+					<h2>Evaluation</h2>
+					<span class="chevron" id="evaluation-chevron">▼</span>
+				</div>
+				<div class="section-content" id="evaluation-content">
+					<div id="scores-container"></div>
+				</div>
+			</section>
+
+			<!-- Suggestions Section -->
+			<section class="report-section collapsible">
+				<div class="section-header" onclick="toggleSection('suggestions')">
+					<h2>Improvement Recommendations</h2>
+					<span class="chevron" id="suggestions-chevron">▼</span>
+				</div>
+				<div class="section-content" id="suggestions-content">
+					<div id="suggestions-text">Loading AI Suggestions...</div>
+				</div>
+			</section>
+
+			<!-- Annotated Transcript + Q&A Section -->
+			<section class="report-section collapsible">
+				<div class="section-header" onclick="toggleSection('transcript')">
+					<h2>Annotated Transcript + Q&A</h2>
+					<span class="chevron" id="transcript-chevron">▼</span>
+				</div>
+				<div class="section-content" id="transcript-content">
+					<div class="transcript-layout">
+						<!-- Left: Transcript Chat Panel -->
+						<div class="transcript-chat-panel" id="transcript-chat-container">
+							<!-- Will be populated by TranscriptChatPanel component -->
+						</div>
+
+						<!-- Right: Annotated Transcript -->
+						<div class="annotated-transcript" id="annotated-transcript-container">
+							<!-- Will be populated by AnnotatedTranscript component -->
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<script src="lib/parser.js"></script>
+		<script src="components/ScoreBar.js"></script>
+		<script src="components/AnnotatedTranscript.js"></script>
+		<script src="components/TranscriptChatPanel.js"></script>
+		<script src="report.js"></script>
+	</body>
+</html>
+

@@ -1,0 +1,50 @@
+{
+	"name": "llm-chat-app-template",
+	"description": "A simple chat application powered by Cloudflare Workers AI",
+	"private": true,
+	"cloudflare": {
+		"label": "LLM Chat App",
+		"products": [
+			"Workers",
+			"Workers AI",
+			"AI Gateway"
+		],
+		"categories": [
+			"ai"
+		],
+		"docs_url": "https://developers.cloudflare.com/workers-ai/",
+		"preview_icon_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/a974bd55-20c6-4656-fa29-1551d43ddc00/public",
+		"preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/65dd8441-89d3-491d-c5a1-0a000d070700/preview",
+		"publish": true
+	},
+	"dependencies": {
+		"marked": "^16.4.2",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "0.8.44",
+		"@types/marked": "^6.0.0",
+		"@types/node": "^24.0.4",
+		"@types/react": "^19.2.6",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^4.7.0",
+		"typescript": "5.8.3",
+		"vite": "^5.4.21",
+		"vitest": "3.2.4",
+		"wrangler": "^4.49.0"
+	},
+	"scripts": {
+		"cf-typegen": "wrangler types",
+		"check": "tsc --noEmit && wrangler deploy --dry-run",
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev --local",
+		"dev:remote": "wrangler dev",
+		"start": "wrangler dev --local",
+		"test": "vitest",
+		"test:chat": "node test-chat-output.js",
+		"test:chat:remote": "BASE_URL=https://your-worker.workers.dev node test-chat-output.js",
+		"build:frontend": "vite build",
+		"dev:frontend": "vite"
+	}
+}

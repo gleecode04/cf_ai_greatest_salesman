@@ -1,0 +1,202 @@
+:root {
+	--primary-color: #f6821f;
+	--primary-hover: #e67e22;
+	--light-bg: #f9fafb;
+	--border-color: #e5e7eb;
+	--text-color: #1f2937;
+	--text-light: #6b7280;
+	--white: #ffffff;
+	--gray-50: #f9fafb;
+	--gray-100: #f3f4f6;
+	--gray-200: #e5e7eb;
+	--gray-300: #d1d5db;
+	--blue-500: #3b82f6;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+	line-height: 1.6;
+	color: var(--text-color);
+	background-color: var(--gray-50);
+}
+
+/* Navigation */
+.nav-bar {
+	background-color: var(--white);
+	border-bottom: 1px solid var(--border-color);
+	padding: 1rem 0;
+	margin-bottom: 2rem;
+}
+
+.nav-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+	display: flex;
+	gap: 2rem;
+}
+
+.nav-link {
+	color: var(--text-color);
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+	background-color: var(--gray-100);
+}
+
+.nav-link.active {
+	background-color: var(--primary-color);
+	color: white;
+}
+
+/* Report Container */
+.report-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem 2rem;
+}
+
+.report-title {
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 2rem;
+	color: var(--text-color);
+}
+
+/* Report Sections */
+.report-section {
+	background-color: var(--white);
+	border-radius: 8px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	margin-bottom: 1.5rem;
+	padding: 1rem;
+}
+
+.section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	padding: 0.5rem 0;
+}
+
+.section-header h2 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	flex-grow: 1;
+	text-align: center;
+}
+
+.chevron {
+	font-size: 1.2rem;
+	color: var(--text-light);
+	transition: transform 0.2s;
+}
+
+.section-content {
+	margin-top: 1rem;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-out;
+}
+
+.section-content.open {
+	max-height: 2000px;
+	overflow-y: auto;
+}
+
+/* Summary & Suggestions */
+#summary-text,
+#suggestions-text {
+	padding: 1rem;
+	line-height: 1.8;
+}
+
+#summary-text h3,
+#suggestions-text h3 {
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+#summary-text p,
+#suggestions-text p {
+	margin-bottom: 0.75rem;
+}
+
+/* Scores Container */
+#scores-container {
+	padding: 1rem;
+}
+
+.score-item {
+	margin-bottom: 1rem;
+}
+
+.score-label {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.25rem;
+	font-weight: 500;
+}
+
+.score-bar-container {
+	width: 100%;
+	height: 12px;
+	background-color: var(--gray-200);
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.score-bar-fill {
+	height: 100%;
+	background-color: var(--blue-500);
+	border-radius: 4px;
+	transition: width 0.3s ease;
+}
+
+/* Transcript Layout */
+.transcript-layout {
+	display: flex;
+	gap: 1rem;
+	min-height: 500px;
+}
+
+.transcript-chat-panel {
+	flex: 1;
+	min-width: 300px;
+	border-right: 1px solid var(--border-color);
+	padding-right: 1rem;
+}
+
+.annotated-transcript {
+	flex: 2;
+	min-width: 0;
+}
+
+@media (max-width: 768px) {
+	.transcript-layout {
+		flex-direction: column;
+	}
+
+	.transcript-chat-panel {
+		border-right: none;
+		border-bottom: 1px solid var(--border-color);
+		padding-right: 0;
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+	}
+}
+
